@@ -2,6 +2,7 @@ import React from "react";
 import logo from './logo.svg';
 import './App.css';
 import users from './users.json';
+import UserInfo from './components/UserInfo';
 
 class App extends React.Component {
 	constructor() {
@@ -16,10 +17,12 @@ class App extends React.Component {
 				{users.map((user) => {
 					return (
 						<div>
-							<p>{user.name}</p>
-							<p>{user.email}</p>
-              <p>{user.website}</p>
-						</div>
+              <UserInfo
+                name = {user.name}
+                email = {user.email}
+                website = {user.website}
+              ></UserInfo>
+            </div>
 					);
 				})}
 			</div>
